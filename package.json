@@ -9,7 +9,7 @@
   "scripts": {
     "start": "browser-sync start --server"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "browser-sync": "^2.26.14"
   }
 }
