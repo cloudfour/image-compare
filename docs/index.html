@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>image-compare</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 50em;
+      margin: 0 auto;
+    }
+
+    /* main > * + * {
+      margin-top: 1.5em;
+    } */
+  </style>
+
+  <!--
+    TODO
+
+    <meta name="description" content="Page description">
+    <meta property="og:title" content="Unique page title - My Site">
+    <meta property="og:description" content="Page description">
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
+    <meta property="og:image:alt" content="Image description">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.mywebsite.com/page">
+    <link rel="canonical" href="https://www.mywebsite.com/page">
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/my.webmanifest">
+    <meta name="theme-color" content="#FF00FF">
+  -->
+</head>
+
+<body>
+  <main>
+    <h1>Image Compare</h1>
+
+    <p>
+      <code>image-compare</code> is a web component to help compare two images with a visibility slider.
+    </p>
+
+    <p>
+      After including the script (TODO) it can be used like so:
+    </p>
+
+  <pre style="overflow-x: auto;max-width:100%;"><code>
+  &lt;image-compare label-text=&quot;Use the slider to control the visibility of the two images.&quot;&gt;
+    &lt;img slot=&quot;image-1&quot; alt=&quot;The Longhorn Steakhouse home page with a headline saying 'Steak as it was meant to be'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg&quot;/&gt;
+    &lt;img slot=&quot;image-2&quot; alt=&quot;The Olive Garden home page with a headline saying 'The comfort you crave'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg&quot;/&gt;
+  &lt;/image-compare&gt;
+  </code></pre>
+
+    <p>
+      It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots.
+    </p>
+
+    <p>
+      There is an optional <code>label-text</code> attribute which can be used to provide extra context to screen reader users and other assistive technologies.
+      If left unset it will default to the following:
+    </p>
+
+    <p>
+      <em>
+        Control how much of each overlapping image is shown. 
+        0 means the first image is completely hidden and the second image is fully visible.
+        100 means the first image is fully visible and the second image is completely hidden.
+        50 means both images are half-shown, half-hidden.
+      </em>
+    </p>
+    
+    <image-compare label-text="Use the slider to control the visibility of the two images.">
+      <img slot="image-1" alt='The Longhorn Steakhouse home page with a headline saying "Steak as it was meant to be"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg"/>
+      <img slot="image-2" alt='The Olive Garden home page with a headline saying "The comfort you crave"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg"/>
+    </image-compare>
+  </main>
+
+  <script src="/src/index.js" type="module"></script>
+</body>
+</html>

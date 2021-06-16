@@ -1,0 +1,15 @@
+{
+  "name": "image-compare",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "type": "module",
+  "homepage": "https://components.studio/edit/ZciZ6Y1Vit2GGVgDPGuj/",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server"
+  },
+  "dev-dependencies": {
+    "browser-sync": "^2.26.14"
+  }
+}
