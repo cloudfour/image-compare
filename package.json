@@ -1,11 +1,11 @@
 {
   "name": "@cloudfour/image-compare",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "license": "ISC",
   "type": "module",
   "homepage": "https://components.studio/edit/ZciZ6Y1Vit2GGVgDPGuj/",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "browser-sync start --server"
   },
