@@ -9,13 +9,24 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 50em;
+      line-height: 1.5;
+      max-width: 35em;
       margin: 0 auto;
     }
 
-    /* main > * + * {
-      margin-top: 1.5em;
-    } */
+    code {
+      background: #333;
+      color: #fff;
+      display: inline-block;
+      padding: 0.1em 0.2em;
+    }
+
+    pre code {
+      display: block;
+      overflow-x: auto;
+      max-width:100%;
+      padding: 1em;
+    }
   </style>
 
   <!--
@@ -48,20 +59,46 @@
       <code>image-compare</code> is a web component to help compare two images with a visibility slider.
     </p>
 
+    <image-compare label-text="Use the slider to control the visibility of the two images.">
+      <img slot="image-1" alt='The Longhorn Steakhouse home page with a headline saying "Steak as it was meant to be"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg"/>
+      <img slot="image-2" alt='The Olive Garden home page with a headline saying "The comfort you crave"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg"/>
+    </image-compare>
+
+    <h2>Usage</h2>
+
     <p>
-      After including the script (TODO) it can be used like so:
+      The quickest way to get started is to load <code>image-compare</code> as a script tag:
     </p>
 
-  <pre style="overflow-x: auto;max-width:100%;"><code>
-  &lt;image-compare label-text=&quot;Use the slider to control the visibility of the two images.&quot;&gt;
-    &lt;img slot=&quot;image-1&quot; alt=&quot;The Longhorn Steakhouse home page with a headline saying 'Steak as it was meant to be'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg&quot;/&gt;
-    &lt;img slot=&quot;image-2&quot; alt=&quot;The Olive Garden home page with a headline saying 'The comfort you crave'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg&quot;/&gt;
-  &lt;/image-compare&gt;
-  </code></pre>
+<pre><code>&lt;script src=&quot;https://unpkg.com/@cloudfour/image-compare/src/index.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+    <p>
+      You can also import <code>image-compare</code> as <a href="https://www.npmjs.com/package/@cloudfour/image-compare">an npm package</a>:
+    </p>
+
+<pre><code>npm i @cloudfour/image-compare</code></pre> 
+
+    &hellip;
+
+    <pre><code>import '@cloudfour/image-compare'</code></pre> 
+
+
+    <p>
+      Then you can use <code>image-compare</code> like a regular HTML element:
+    </p>
+
+<pre><code>&lt;image-compare label-text=&quot;Use the slider to control the visibility of the two images.&quot;&gt;
+  &lt;img slot=&quot;image-1&quot; alt=&quot;The Longhorn Steakhouse home page with a headline saying 'Steak as it was meant to be'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg&quot;/&gt;
+  &lt;img slot=&quot;image-2&quot; alt=&quot;The Olive Garden home page with a headline saying 'The comfort you crave'&quot; src=&quot;https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg&quot;/&gt;
+&lt;/image-compare&gt;</code></pre>
+
+    <h3>Slots</h3>
 
     <p>
       It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots.
     </p>
+
+    <h3>Custom Label Text</h3>
 
     <p>
       There is an optional <code>label-text</code> attribute which can be used to provide extra context to screen reader users and other assistive technologies.
@@ -76,11 +113,23 @@
         50 means both images are half-shown, half-hidden.
       </em>
     </p>
-    
-    <image-compare label-text="Use the slider to control the visibility of the two images.">
-      <img slot="image-1" alt='The Longhorn Steakhouse home page with a headline saying "Steak as it was meant to be"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg"/>
-      <img slot="image-2" alt='The Olive Garden home page with a headline saying "The comfort you crave"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg"/>
-    </image-compare>
+
+    <h3>Accessibility</h3>
+
+    <p>
+      Under the hood, <code>image-compare</code> is powered by an HTML range slider.
+      This ensures that it can be controlled via keyboard and assistive technologies.
+    </p>
+
+    <p>
+      The range slider has a visually hidden label which is exposed to screen readers
+      and other assistive technologies. This can be customized with the <code>label-text</code> attribute.
+    </p>
+
+    <p>
+      When using <code>image-compare</code> careful thought should be given to the label text,
+      as well as the alt text on the images being compared.
+    </p>
   </main>
 
   <script src="/src/index.js" type="module"></script>
