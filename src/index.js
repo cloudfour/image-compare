@@ -65,7 +65,7 @@ template.innerHTML = /*html*/`
     slot[name='image-2'] {
       position: absolute;
       top:0;
-      filter: drop-shadow(calc(var(--border-width) * -1) var(--border-width) 0px var(--border-color));
+      filter: drop-shadow(calc(var(--border-width) * -1) 0 0 var(--border-color));
     }
 
     .visually-hidden {
@@ -94,8 +94,7 @@ template.innerHTML = /*html*/`
 
     input {
       cursor: col-resize;
-      margin-left: calc(var(--thumb-size) / -2);
-      margin-right: calc(var(--thumb-size) / -2);
+      margin: 0 calc(var(--thumb-size) / -2);
       width: calc(100% + var(--thumb-size));
       appearance: none;
       -webkit-appearance: none;
