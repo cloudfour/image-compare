@@ -159,6 +159,22 @@
       as well as the alt text on the images being compared.
     </p>
 
+    <h2>Performance</h2>
+
+    <p>
+      <code>image-compare</code> was built with an emphasis on performance. 
+      The package is 12.9kb (4.27kb gzipped). It uses a native range slider to
+      avoid needing to listen for mouse events, and it performs visual changes
+      using a <code>clip-path</code> to avoid unnecessary repaints.
+    </p>
+
+    <h2>Progressive Enhancement</h2>
+
+    <p>
+      If the JavaScript is slow to load or fails to load, the two images will
+      display vertically stacked on the page so they can still be compared.
+    </p>
+
     <hr>
 
     <p>
