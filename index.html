@@ -30,10 +30,10 @@
     }
   </style>
 
+  <meta name="description" content="A web component for comparing images using a slider. Built with a focus on accessibility, performance, and progressive enhancement.">  
+
   <!--
     TODO
-
-    <meta name="description" content="Page description">
     <meta property="og:title" content="Unique page title - My Site">
     <meta property="og:description" content="Page description">
     <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
@@ -57,7 +57,14 @@
     <h1>Image Compare</h1>
 
     <p>
-      <code>image-compare</code> is a web component to help compare two images with a visibility slider.
+      <em>
+        A web component for comparing images using a slider. Built with a focus on accessibility, performance, and progressive enhancement.
+      </em>
+    </p>
+
+    <p>
+      For more information check it out on <a href="https://www.npmjs.com/package/@cloudfour/image-compare">NPM</a>
+      or <a href="https://github.com/cloudfour/image-compare">GitHub</a>.
     </p>
 
     <image-compare label-text="Use the slider to control the visibility of the two images.">
@@ -71,15 +78,17 @@
       The quickest way to get started is to load <code>image-compare</code> as a script tag:
     </p>
 
-<pre><code>&lt;script src=&quot;https://unpkg.com/@cloudfour/image-compare/src/index.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <pre><code>&lt;script src=&quot;https://unpkg.com/@cloudfour/image-compare/src/index.js&quot;&gt;&lt;/script&gt;</code></pre>
 
     <p>
-      You can also import <code>image-compare</code> as <a href="https://www.npmjs.com/package/@cloudfour/image-compare">an npm package</a>:
+      You can also install <code>image-compare</code> as <a href="https://www.npmjs.com/package/@cloudfour/image-compare">an npm package</a>:
     </p>
 
-<pre><code>npm i @cloudfour/image-compare</code></pre> 
+    <pre><code>npm i @cloudfour/image-compare</code></pre> 
 
-    &hellip;
+    <p>
+      And then import it into your code:
+    </p>
 
     <pre><code>import '@cloudfour/image-compare'</code></pre> 
 
@@ -96,7 +105,8 @@
     <h3>Slots</h3>
 
     <p>
-      It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots.
+      It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots. 
+      (`image-1` will be on the left, and `image-2` will be on the right.)
     </p>
 
     <h3>Custom Label Text</h3>
@@ -114,6 +124,23 @@
         50 means both images are half-shown, half-hidden.
       </em>
     </p>
+
+    <h3>Styling</h3>
+
+    <p>The image-compare component can be styled using custom properties. Here is the full list of custom properties and their default values:</p>
+
+<pre><code>--thumb-background-color: hsla(0, 0%, 100%, 0.85);
+--thumb-background-image: url('data:image/svg+xml;utf8,&lt;svg viewbox=&quot;0 0 60 60&quot;  width=&quot;60&quot; height=&quot;60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;4&quot; d=&quot;M20 20 L10 30 L20 40&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;4&quot; d=&quot;M40 20 L50 30 L40 40&quot;/&gt;&lt;/svg&gt;');
+--thumb-size: 3em;
+--thumb-radius: 50%;
+--thumb-border-color: hsla(0, 0%, 0%, 0.9);
+--thumb-border-size: 2px;
+
+--focus-width: var(--thumb-border-size);
+--focus-color: hsl(200, 100%, 80%);
+
+--border-width: 2px;
+--border-color: hsla(0, 0%, 0%, 0.9);</code></pre>
 
     <h2>Accessibility</h2>
 

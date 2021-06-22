@@ -1,10 +1,10 @@
 {
   "name": "@cloudfour/image-compare",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "A web component for comparing two images using a slider",
   "license": "ISC",
   "type": "module",
-  "homepage": "https://components.studio/edit/ZciZ6Y1Vit2GGVgDPGuj/",
+  "homepage": "https://image-compare-component.netlify.app/",
   "main": "src/index.js",
   "scripts": {
     "start": "browser-sync start --server"
