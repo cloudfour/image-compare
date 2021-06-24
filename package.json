@@ -6,22 +6,29 @@
   "type": "module",
   "homepage": "https://image-compare-component.netlify.app/",
   "main": "dist/index.js",
-  "prepare": "npm run build",
+  "prepare": "npm run prepare",
   "files": [
-    "dist"
+    "dist",
+    "manifests"
   ],
   "scripts": {
     "start": "browser-sync start --server",
     "build:clean": "del dist",
     "build:copy": "cpy src/*.js dist",
     "build:minify": "minify dist/index.js > dist/index.min.js",
-    "build": "run-s build:*"
+    "build": "run-s build:*",
+    "document:json": "wca analyze src/index.js --outFile manifests/manifest.json",
+    "document:vscode": "wca analyze src/index.js --format vscode --outFile manifests/manifest-vscode.json",
+    "document:md": "wca analyze src/index.js --outFile manifests/manifest.md",
+    "document": "run-p document:*",
+    "prepare": "run-p build document"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "cpy-cli": "^3.1.1",
     "del-cli": "^4.0.0",
     "minify": "^7.0.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "web-component-analyzer": "^1.1.6"
   }
 }
