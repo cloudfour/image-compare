@@ -34,8 +34,8 @@ template.innerHTML = /*html*/`
       --focus-width: var(--thumb-border-size);
       --focus-color: hsl(200, 100%, 80%);
 
-      --border-width: 2px;
-      --border-color: hsla(0, 0%, 0%, 0.9);
+      --divider-width: 2px;
+      --divider-color: hsla(0, 0%, 0%, 0.9);
 
       display: flex;
       flex-direction: column;
@@ -50,10 +50,10 @@ template.innerHTML = /*html*/`
 
     ::slotted([slot='image-2']) {
       clip-path: polygon(
-        calc(var(--exposure) + var(--border-width)/2) 0, 
+        calc(var(--exposure) + var(--divider-width)/2) 0, 
         100% 0, 
         100% 100%, 
-        calc(var(--exposure) + var(--border-width)/2) 100%);
+        calc(var(--exposure) + var(--divider-width)/2) 100%);
     }
 
     slot {
@@ -64,7 +64,7 @@ template.innerHTML = /*html*/`
     slot[name='image-2'] {
       position: absolute;
       top:0;
-      filter: drop-shadow(calc(var(--border-width) * -1) 0 0 var(--border-color));
+      filter: drop-shadow(calc(var(--divider-width) * -1) 0 0 var(--divider-color));
     }
 
     .visually-hidden {
@@ -138,6 +138,27 @@ template.innerHTML = /*html*/`
   </label>
 `;
 
+/**
+ * Our ImageCompare web component class
+ * 
+ * @attr {string} label-text - Provide additional context to screen reader users.
+ * 
+ * @slot image-1 - Your first image. Will appear on the "left"
+ * @slot image-2 - Your second image. Will appear on the "right"
+ * 
+ * @cssprop --thumb-background-color - The background color of the range slider handle. 
+ * @cssprop --thumb-background-image - The background image of the range slider handle.
+ * @cssprop --thumb-size - The size of the range slider handle.
+ * @cssprop --thumb-radius - The background image of the range slider handle.
+ * @cssprop --thumb-border-color - The color of the range slider handle border.
+ * @cssprop --thumb-border-size - The width of the range slider handle border.
+ * 
+ * @ccprop --focus-width - The width of the range slider handle's focus outline.
+ * @ccprop --focus-color - The color of the range slider handle's focus outline.
+ *
+ * @ccprop --divider-width - The width of the divider shown between the two images.
+ * @ccprop --divider-color - The color of the divider shown between the two images.
+ */
 class ImageCompare extends HTMLElement {
   constructor() {
     super();

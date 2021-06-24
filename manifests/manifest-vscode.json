@@ -3,7 +3,13 @@
   "tags": [
     {
       "name": "image-compare",
-      "attributes": []
+      "description": "Our ImageCompare web component class\n\nSlots:\n\n  * `image-1` {} - Your first image. Will appear on the \"left\"\n\n  * `image-2` {} - Your second image. Will appear on the \"right\"\n\nAttributes:\n\n  * `label-text` {string} - Provide additional context to screen reader users.",
+      "attributes": [
+        {
+          "name": "label-text",
+          "description": "`label-text` {string} - Provide additional context to screen reader users.\n\n"
+        }
+      ]
     }
   ],
   "globalAttributes": [],

@@ -3,7 +3,51 @@
   "tags": [
     {
       "name": "image-compare",
-      "path": "./../src/index.js"
+      "path": "./../src/index.js",
+      "description": "Our ImageCompare web component class",
+      "attributes": [
+        {
+          "name": "label-text",
+          "description": "Provide additional context to screen reader users.",
+          "type": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "image-1",
+          "description": "Your first image. Will appear on the \"left\""
+        },
+        {
+          "name": "image-2",
+          "description": "Your second image. Will appear on the \"right\""
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--thumb-background-color",
+          "description": "The background color of the range slider handle."
+        },
+        {
+          "name": "--thumb-background-image",
+          "description": "The background image of the range slider handle."
+        },
+        {
+          "name": "--thumb-size",
+          "description": "The size of the range slider handle."
+        },
+        {
+          "name": "--thumb-radius",
+          "description": "The background image of the range slider handle."
+        },
+        {
+          "name": "--thumb-border-color",
+          "description": "The color of the range slider handle border."
+        },
+        {
+          "name": "--thumb-border-size",
+          "description": "The width of the range slider handle border."
+        }
+      ]
     }
   ]
 }
