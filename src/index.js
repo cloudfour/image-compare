@@ -17,7 +17,6 @@ const thumbFocusStyles = `
   box-shadow: 0px 0px 0px var(--focus-width) var(--focus-color);
 `;
 
-
 const thumbSvgWidth = 4;
 
 template.innerHTML = /*html*/`
@@ -147,16 +146,14 @@ class ImageCompare extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.querySelector("input").addEventListener('input', this.update);
+    this.shadowRoot.querySelector("input").addEventListener('input', ({target}) => {
+      this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
+    });
 
     const customLabel = this.shadowRoot.host.getAttribute('label-text');
     if(customLabel) {
       this.shadowRoot.querySelector(".js-label-text").textContent = customLabel;
     }
-  }
-
-  update = (e) => {
-    this.shadowRoot.host.style.setProperty('--exposure', `${e.target.value}%`)
   }
 }
 

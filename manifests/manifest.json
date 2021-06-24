@@ -3,14 +3,7 @@
   "tags": [
     {
       "name": "image-compare",
-      "path": "./../src/index.js",
-      "properties": [
-        {
-          "name": "update",
-          "type": "(e: any) => void",
-          "default": "\"(e) => {\\n    this.shadowRoot.host.style.setProperty('--exposure', `${e.target.value}%`)\\n  }\""
-        }
-      ]
+      "path": "./../src/index.js"
     }
   ]
 }
