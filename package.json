@@ -1,15 +1,26 @@
 {
   "name": "@cloudfour/image-compare",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A web component for comparing two images using a slider",
   "license": "ISC",
   "type": "module",
   "homepage": "https://image-compare-component.netlify.app/",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "prepare": "npm run build",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "browser-sync start --server"
+    "start": "browser-sync start --server",
+    "clean": "del dist",
+    "copy": "cpy src/*.js dist",
+    "minify": "minify dist/index.js > dist/index.min.js",
+    "build": "npm run clean && npm run copy && npm run minify"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.14"
+    "browser-sync": "^2.26.14",
+    "cpy-cli": "^3.1.1",
+    "del-cli": "^4.0.0",
+    "minify": "^7.0.2"
   }
 }
