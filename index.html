@@ -15,6 +15,18 @@
       padding: 1em;
     }
 
+    * {
+      margin: 0;
+    }
+
+    main > * + * {
+      margin-top: 1.25em;
+    }
+
+    main > * + :is(h1, h2, h3, h4, h5, h6) {
+      margin-top: 1.75em;
+    }
+
     code {
       background: #333;
       color: #fff;
@@ -27,6 +39,12 @@
       overflow-x: auto;
       max-width:100%;
       padding: 1em;
+    }
+
+    figcaption {
+      margin-top: 0.75em;
+      text-align: center;
+      color: #555;
     }
   </style>
 
@@ -67,10 +85,43 @@
       or <a href="https://github.com/cloudfour/image-compare">GitHub</a>.
     </p>
 
-    <image-compare label-text="Use the slider to control the visibility of the two images.">
-      <img slot="image-1" alt='The Longhorn Steakhouse home page with a headline saying "Steak as it was meant to be"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/longhorn-screenshot-750.jpg"/>
-      <img slot="image-2" alt='The Olive Garden home page with a headline saying "The comfort you crave"' src="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/olivegarden-screenshot-750.jpg"/>
-    </image-compare>
+    <figure>
+      <image-compare label-text="Use the slider to control the visibility of the two images.">
+        <img 
+          slot="image-1" 
+          alt='Notre Dame on a sunny, blue-sky day. The ornate cathedral sits atop a canal wall, its spire pointing to the sky.' 
+          sizes="(min-width: 640px) 560px, 91.25vw"
+          src="/assets/images/before/1024.jpg"          
+          srcset="
+            /assets/images/before/320.jpg 320w,
+            /assets/images/before/640.jpg 640w,
+            /assets/images/before/800.jpg 800w,
+            /assets/images/before/1024.jpg 1024w,
+            /assets/images/before/1280.jpg 1280w
+          "
+        />
+        <img 
+          slot="image-2" 
+          alt='Notre Dame showing fire damage: the spire is gone, and scaffolding surrounds damaged areas of the charred cathedral.' 
+          sizes="(min-width: 640px) 560px, 91.25vw"
+          src="/assets/images/after/1024.jpg"          
+          srcset="
+            /assets/images/after/320.jpg 320w,
+            /assets/images/after/640.jpg 640w,
+            /assets/images/after/800.jpg 800w,
+            /assets/images/after/1024.jpg 1024w,
+            /assets/images/after/1280.jpg 1280w
+          "
+        />
+      </image-compare>
+      <figcaption>
+        Notre Dame, before and after the fire. 
+        Photos from 
+        <a href="https://commons.wikimedia.org/wiki/File:Before_and_after_the_fire_Notre_Dame.jpg">
+          Wikimedia Commons
+        </a>
+      </figcaption>
+    </figure>
 
     <h2>Usage</h2>
 
@@ -92,7 +143,6 @@
 
     <pre><code>import '@cloudfour/image-compare'</code></pre> 
 
-
     <p>
       Then you can use <code>image-compare</code> like a regular HTML element:
     </p>
@@ -107,6 +157,19 @@
     <p>
       It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots. 
       (`image-1` will be on the left, and `image-2` will be on the right.)
+    </p>
+
+    <p>
+      For best results both images should have the same aspect ratio.
+      The second image will be cropped to the height of the first image.
+    </p>
+
+    <p>
+      <code>image-compare</code> also works well with the 
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">
+        responsive images syntax
+      </a>
+      allowing you to optimize your images for different devices and screen sizes.
     </p>
 
     <h3>Custom Label Text</h3>
