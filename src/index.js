@@ -57,7 +57,7 @@ template.innerHTML = /*html*/`
     }
 
     slot {
-      display: block;
+      display: flex;
       width: 100%;
     }
 
