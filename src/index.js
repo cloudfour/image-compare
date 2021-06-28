@@ -1,5 +1,7 @@
 const template = document.createElement("template");
 
+// Styling range input thumbs requires you to separately define the CSS rules
+// for different browsers. We store them once here for ease of maintenance.
 const thumbStyles = `
   background-color: var(--thumb-background-color);
   background-image: var(--thumb-background-image);
@@ -19,6 +21,8 @@ const thumbFocusStyles = `
 
 const thumbSvgWidth = 4;
 
+// Since the code below is a template string literal, it will not be minified or
+// transpiled
 template.innerHTML = /*html*/`
   <style>
     :host {
@@ -111,10 +115,6 @@ template.innerHTML = /*html*/`
       ${thumbStyles}
     }
 
-    input:focus {
-      box-shadow: 0px 0px 0px var(--focus-width) var(--focus-color);
-    }
-
     input:focus::-moz-range-thumb {
       ${thumbFocusStyles}
     }
@@ -167,6 +167,7 @@ class ImageCompare extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    
     this.shadowRoot.querySelector("input").addEventListener('input', ({target}) => {
       this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
     });
