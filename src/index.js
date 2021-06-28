@@ -26,7 +26,7 @@ template.innerHTML = /*html*/`
 
       --thumb-background-color: hsla(0, 0%, 100%, 0.85);
       --thumb-background-image: url('data:image/svg+xml;utf8,<svg viewbox="0 0 60 60"  width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="${thumbSvgWidth}" d="M20 20 L10 30 L20 40"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="${thumbSvgWidth}" d="M40 20 L50 30 L40 40"/></svg>');
-      --thumb-size: 3em;
+      --thumb-size: clamp(3em, 10vmin, 5em);
       --thumb-radius: 50%;
       --thumb-border-color: hsla(0, 0%, 0%, 0.9);
       --thumb-border-size: 2px;
