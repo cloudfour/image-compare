@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
 
-  <title>image-compare</title>
+  <title>Image Compare Web Component</title>
 
   <style>
     body {
@@ -109,13 +109,22 @@
     <h2>Usage</h2>
 
     <p>
-      The quickest way to get started is to load <code>image-compare</code> as a script tag:
+      The quickest way to get started is to load Image Compare as a script tag:
     </p>
 
     <pre><code>&lt;script src=&quot;https://unpkg.com/@cloudfour/image-compare/dist/index.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
     <p>
-      You can also install <code>image-compare</code> as <a href="https://www.npmjs.com/package/@cloudfour/image-compare/">an npm package</a>:
+      Then you can use Image Compare like a regular HTML element:
+    </p>
+
+<pre><code>&lt;image-compare label-text=&quot;Screen Reader Label Text&quot;&gt;
+  &lt;img slot=&quot;image-1&quot; alt=&quot;Alt Text&quot; src=&quot;path/to/image.jpg&quot;/&gt;
+  &lt;img slot=&quot;image-2&quot; alt=&quot;Alt text&quot; src=&quot;path/to/image.jpg&quot;/&gt;
+&lt;/image-compare&gt;</code></pre>
+
+    <p>
+      You can also install Image Compare as <a href="https://www.npmjs.com/package/@cloudfour/image-compare/">an npm package</a>:
     </p>
 
     <pre><code>npm i @cloudfour/image-compare</code></pre> 
@@ -126,20 +135,11 @@
 
     <pre><code>import '@cloudfour/image-compare'</code></pre> 
 
-    <p>
-      Then you can use <code>image-compare</code> like a regular HTML element:
-    </p>
-
-<pre><code>&lt;image-compare label-text=&quot;Screen Reader Label Text&quot;&gt;
-  &lt;img slot=&quot;image-1&quot; alt=&quot;Alt Text&quot; src=&quot;path/to/image.jpg&quot;/&gt;
-  &lt;img slot=&quot;image-2&quot; alt=&quot;Alt text&quot; src=&quot;path/to/image.jpg&quot;/&gt;
-&lt;/image-compare&gt;</code></pre>
-
     <h3>Slots</h3>
 
     <p>
       It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots. 
-      (`image-1` will be on the left, and `image-2` will be on the right.)
+      (<code>image-1</code> will be on the left, and <code>image-2</code> will be on the right.)
     </p>
 
     <p>
@@ -148,7 +148,7 @@
     </p>
 
     <p>
-      <code>image-compare</code> also works well with the 
+      Image Compare also works well with the 
       <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">
         responsive images syntax
       </a>
@@ -173,7 +173,10 @@
 
     <h3>Styling</h3>
 
-    <p>The image-compare component can be styled using custom properties. Here is the full list of custom properties and their default values:</p>
+    <p>
+      The image-compare component can be styled using custom properties. 
+      Here is the full list of custom properties and their default values:
+    </p>
 
 <pre><code>--thumb-background-color: hsla(0, 0%, 100%, 0.9);
 --thumb-background-image: url('data:image/svg+xml;utf8,&lt;svg viewbox=&quot;0 0 60 60&quot;  width=&quot;60&quot; height=&quot;60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;4&quot; d=&quot;M20 20 L10 30 L20 40&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;4&quot; d=&quot;M40 20 L50 30 L40 40&quot;/&gt;&lt;/svg&gt;');
@@ -212,7 +215,8 @@
     <h2>Accessibility</h2>
 
     <p>
-      Under the hood, <code>image-compare</code> is powered by an HTML range slider.
+      Under the hood, Image Compare is powered by an 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">HTML range slider.</a>
       This ensures that it can be controlled via keyboard and assistive technologies.
     </p>
 
@@ -222,15 +226,16 @@
     </p>
 
     <p>
-      When using <code>image-compare</code> careful thought should be given to the label text,
+      When using Image Compare careful thought should be given to the label text,
       as well as the alt text on the images being compared.
     </p>
 
     <h2>Performance</h2>
 
     <p>
-      <code>image-compare</code> has zero dependencies and weighs in at 10.7kb 
-      (1.93kb minified and gzipped) including markup, interactivity, and styles. 
+      Image Compare has zero dependencies and weighs in at 10.7kb 
+      (<a href="https://bundlephobia.com/package/@cloudfour/image-compare">1.5 kB minified and gzipped</a>) 
+      including markup, interactivity, and styles. 
     </p>
 
     <p>
@@ -248,7 +253,7 @@
     <h2>Browser Support</h2>
 
     <p>
-      <code>image-compare</code> works in all modern browsers. 
+      Image Compare works in all modern browsers. 
       (It will not work in IE11 since IE11 does not have support for custom
       elements or custom properties. In IE11 it should fall back to displaying
       two stacked images.)
