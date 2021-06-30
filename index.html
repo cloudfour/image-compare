@@ -106,6 +106,53 @@
       </figcaption>
     </figure>
 
+    <h2>Accessibility</h2>
+
+    <p>
+      Under the hood, Image Compare is powered by an 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">HTML range slider.</a>
+      This ensures that it can be controlled via keyboard and assistive technologies.
+    </p>
+
+    <p>
+      The range slider has a visually hidden label which is exposed to screen readers
+      and other assistive technologies. This can be customized with the <code>label-text</code> attribute.
+    </p>
+
+    <p>
+      When using Image Compare careful thought should be given to the label text,
+      as well as the alt text on the images being compared.
+    </p>
+
+    <h2>Performance</h2>
+
+    <p>
+      Image Compare has zero dependencies and weighs in at just
+      <a href="https://bundlephobia.com/package/@cloudfour/image-compare">1.5 kB (minified and gzipped)</a>
+      including markup, interactivity, and styles. 
+    </p>
+
+    <p>
+      It uses a native range slider to avoid needing to listen for 
+      mouse events, and it performs visual changes using a <code>clip-path</code> to avoid unnecessary repaints.
+    </p>
+
+    <h2>Progressive Enhancement</h2>
+
+    <p>
+      If the JavaScript is slow to load or fails to load, the two images will
+      display vertically stacked on the page so they can still be compared.
+    </p>
+
+    <h2>Browser Support</h2>
+
+    <p>
+      Image Compare works in all modern browsers. 
+      (It will not work in IE11 since IE11 does not have support for custom
+      elements or custom properties. In IE11 it should fall back to displaying
+      two stacked images.)
+    </p>
+
     <h2>Usage</h2>
 
     <p>
@@ -210,54 +257,6 @@
         <a href="/manifests/manifest-vscode.json">VS Code Manifest</a>
       </li>
     </ul>
-
-
-    <h2>Accessibility</h2>
-
-    <p>
-      Under the hood, Image Compare is powered by an 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">HTML range slider.</a>
-      This ensures that it can be controlled via keyboard and assistive technologies.
-    </p>
-
-    <p>
-      The range slider has a visually hidden label which is exposed to screen readers
-      and other assistive technologies. This can be customized with the <code>label-text</code> attribute.
-    </p>
-
-    <p>
-      When using Image Compare careful thought should be given to the label text,
-      as well as the alt text on the images being compared.
-    </p>
-
-    <h2>Performance</h2>
-
-    <p>
-      Image Compare has zero dependencies and weighs in at 10.7kb 
-      (<a href="https://bundlephobia.com/package/@cloudfour/image-compare">1.5 kB minified and gzipped</a>) 
-      including markup, interactivity, and styles. 
-    </p>
-
-    <p>
-      It uses a native range slider to avoid needing to listen for 
-      mouse events, and it performs visual changes using a <code>clip-path</code> to avoid unnecessary repaints.
-    </p>
-
-    <h2>Progressive Enhancement</h2>
-
-    <p>
-      If the JavaScript is slow to load or fails to load, the two images will
-      display vertically stacked on the page so they can still be compared.
-    </p>
-
-    <h2>Browser Support</h2>
-
-    <p>
-      Image Compare works in all modern browsers. 
-      (It will not work in IE11 since IE11 does not have support for custom
-      elements or custom properties. In IE11 it should fall back to displaying
-      two stacked images.)
-    </p>
 
     <h2>Contributing</h2>
 
