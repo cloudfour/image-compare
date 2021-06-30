@@ -149,7 +149,7 @@ template.innerHTML = /*html*/`
  * @cssprop --thumb-background-color - The background color of the range slider handle. 
  * @cssprop --thumb-background-image - The background image of the range slider handle.
  * @cssprop --thumb-size - The size of the range slider handle.
- * @cssprop --thumb-radius - The background image of the range slider handle.
+ * @cssprop --thumb-radius - The border-radius of the range slider handle.
  * @cssprop --thumb-border-color - The color of the range slider handle border.
  * @cssprop --thumb-border-size - The width of the range slider handle border.
  * 
