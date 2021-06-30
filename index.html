@@ -19,7 +19,7 @@
       margin: 0;
     }
 
-    main > * + * {
+    :is(main, .table-of-contents) > * + * {
       margin-top: 1em;
     }
 
@@ -55,7 +55,7 @@
 
 <body>
   <main>
-    <h1>Image Compare</h1>
+    <h1 id="image-compare">Image Compare</h1>
 
     <p>
       <em>
@@ -106,7 +106,54 @@
       </figcaption>
     </figure>
 
-    <h2>How it works</h2>
+    <nav class="table-of-contents" aria-labelledby="table-of-contents">
+      <h2 id="table-of-contents">Table of Contents</h2>
+
+      <ol>
+        <li>
+          <a href="#how-it-works">How it works</a>
+
+          <ol>
+            <li>
+              <a href="#accessibility">Accessibility</a>
+            </li>
+            <li>
+              <a href="#performance">Performance</a>
+            </li>
+            <li>
+              <a href="#progressive-enhancement">Progressive Enhancement</a>
+            </li>
+            <li>
+              <a href="#browser-support">Browser Support</a>
+            </li>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#usage">Usage</a>
+
+          <ol>
+            <li>
+              <a href="#slots">Slots</a>
+            </li>
+            <li>
+              <a href="#custom-label-text">Custom Label Text</a>
+            </li>
+            <li>
+              <a href="#styling">Styling</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#manifest-files">Manifest Files</a>
+        </li>
+        <li>
+          <a href="#contributing">Contributing</a>
+        </li>
+      </ol>
+    </nav>
+
+    <h2 id="how-it-works">How it works</h2>
 
     <p>
       Image Compare layers your two images on top of each other. 
@@ -123,8 +170,7 @@
       <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">custom property</a>.
     </p>
 
-
-    <h2>Accessibility</h2>
+    <h3 id="accessibility">Accessibility</h3>
 
     <p>
       Since Image Compare uses a native HTML range input it can be controlled 
@@ -144,7 +190,7 @@
       as well as the alt text on the images being compared.
     </p>
 
-    <h2>Performance</h2>
+    <h3 id="performance">Performance</h3>
 
     <p>
       Image Compare has zero dependencies and weighs in at just
@@ -152,14 +198,14 @@
       including markup, interactivity, and styles. 
     </p>
 
-    <h2>Progressive Enhancement</h2>
+    <h3 id="progressive-enhancement">Progressive Enhancement</h3>
 
     <p>
       If the JavaScript is slow to load or fails to load, the two images will
       display vertically stacked on the page so they can still be compared.
     </p>
 
-    <h2>Browser Support</h2>
+    <h3 id="browser-support">Browser Support</h3>
 
     <p>
       Image Compare works in all modern browsers. 
@@ -168,7 +214,7 @@
       two stacked images.)
     </p>
 
-    <h2>Usage</h2>
+    <h2 id="usage">Usage</h2>
 
     <p>
       The quickest way to get started is to load Image Compare as a script tag:
@@ -197,7 +243,7 @@
 
     <pre><code>import '@cloudfour/image-compare'</code></pre> 
 
-    <h3>Slots</h3>
+    <h3 id="slots">Slots</h3>
 
     <p>
       It expects two images to be passed into the <code>image-1</code> and <code>image-2</code> slots. 
@@ -217,7 +263,7 @@
       allowing you to optimize your images for different devices and screen sizes.
     </p>
 
-    <h3>Custom Label Text</h3>
+    <h3 id="custom-label-text">Custom Label Text</h3>
 
     <p>
       There is an optional <code>label-text</code> attribute which can be used to provide extra context to screen reader users and other assistive technologies.
@@ -233,7 +279,7 @@
       </em>
     </p>
 
-    <h3>Styling</h3>
+    <h3 id="styling">Styling</h3>
 
     <p>
       The image-compare component can be styled using custom properties. 
@@ -253,7 +299,7 @@
 --border-width: 2px;
 --border-color: hsla(0, 0%, 0%, 0.9);</code></pre>
 
-    <h3>Manifest Files</h3>
+    <h2 id="manifest-files">Manifest Files</h2>
 
     <p>
       Additional <a href="https://github.com/webcomponents/custom-elements-manifest">manifest</a> 
@@ -273,7 +319,7 @@
       </li>
     </ul>
 
-    <h2>Contributing</h2>
+    <h2 id="contributing">Contributing</h2>
 
     <p>
       Notice an issue or have an idea for an improvement?
