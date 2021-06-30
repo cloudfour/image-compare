@@ -106,17 +106,37 @@
       </figcaption>
     </figure>
 
-    <h2>Accessibility</h2>
+    <h2>How it works</h2>
 
     <p>
-      Under the hood, Image Compare is powered by an 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">HTML range slider.</a>
-      This ensures that it can be controlled via keyboard and assistive technologies.
+      Image Compare layers your two images on top of each other. 
+      Then it applies a percentage-based 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path">CSS clipping mask</a>
+      to the top image.
     </p>
 
     <p>
-      The range slider has a visually hidden label which is exposed to screen readers
-      and other assistive technologies. This can be customized with the <code>label-text</code> attribute.
+      The slider control is built using a 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">HTML range input</a>
+      with special styles and positioning applied via CSS.
+      When the slider value changes the clipping mask is updated using a 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">custom property</a>.
+    </p>
+
+
+    <h2>Accessibility</h2>
+
+    <p>
+      Since Image Compare uses a native HTML range input it can be controlled 
+      via keyboard and assistive technologies.
+    </p>
+
+    <p>
+      The input has a 
+      <a href="https://cloudfour.com/thinks/see-no-evil-hidden-content-and-accessibility/#showing-additional-content-for-screen-readers">visually hidden label</a> 
+      which is exposed to screen readers and other assistive technologies 
+      without affecting the visual design. 
+      This can be customized with the <code>label-text</code> attribute.
     </p>
 
     <p>
@@ -130,11 +150,6 @@
       Image Compare has zero dependencies and weighs in at just
       <a href="https://bundlephobia.com/package/@cloudfour/image-compare">1.5 kB (minified and gzipped)</a>
       including markup, interactivity, and styles. 
-    </p>
-
-    <p>
-      It uses a native range slider to avoid needing to listen for 
-      mouse events, and it performs visual changes using a <code>clip-path</code> to avoid unnecessary repaints.
     </p>
 
     <h2>Progressive Enhancement</h2>
