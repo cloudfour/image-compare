@@ -37,7 +37,7 @@
         },
         {
           "name": "--thumb-radius",
-          "description": "The background image of the range slider handle."
+          "description": "The border-radius of the range slider handle."
         },
         {
           "name": "--thumb-border-color",

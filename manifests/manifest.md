@@ -23,5 +23,5 @@ Our ImageCompare web component class
 | `--thumb-background-image` | The background image of the range slider handle. |
 | `--thumb-border-color`     | The color of the range slider handle border.     |
 | `--thumb-border-size`      | The width of the range slider handle border.     |
-| `--thumb-radius`           | The background image of the range slider handle. |
+| `--thumb-radius`           | The border-radius of the range slider handle.    |
 | `--thumb-size`             | The size of the range slider handle.             |
