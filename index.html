@@ -40,12 +40,6 @@
       max-width:100%;
       padding: 1em;
     }
-
-    figcaption {
-      margin-top: 0.75em;
-      text-align: center;
-      color: #555;
-    }
   </style>
 
   <meta name="description" content="A tiny, zero-dependency web component for comparing two images using a slider. Built with a focus on accessibility, performance, and progressive enhancement.">  
@@ -72,38 +66,15 @@
       <image-compare label-text="Use the slider to control the visibility of the two images.">
         <img 
           slot="image-1" 
-          alt='Notre Dame on a sunny, blue-sky day. The ornate cathedral sits atop a canal wall, its spire pointing to the sky.' 
-          sizes="(min-width: 640px) 560px, 91.25vw"
-          src="/assets/images/before/1024.jpg"          
-          srcset="
-            /assets/images/before/320.jpg 320w,
-            /assets/images/before/640.jpg 640w,
-            /assets/images/before/800.jpg 800w,
-            /assets/images/before/1024.jpg 1024w,
-            /assets/images/before/1280.jpg 1280w
-          "
+          alt='A friendly illustrated cloud character with eyes on a red-pink background.' 
+          src="/assets/images/example-image.svg"
         />
         <img 
           slot="image-2" 
-          alt='Notre Dame showing fire damage: the spire is gone, and scaffolding surrounds damaged areas of the charred cathedral.' 
-          sizes="(min-width: 640px) 560px, 91.25vw"
-          src="/assets/images/after/1024.jpg"          
-          srcset="
-            /assets/images/after/320.jpg 320w,
-            /assets/images/after/640.jpg 640w,
-            /assets/images/after/800.jpg 800w,
-            /assets/images/after/1024.jpg 1024w,
-            /assets/images/after/1280.jpg 1280w
-          "
+          alt='A friendly illustrated cloud character with eyes surrounded by a variety of icons (including check marks, stars, code brackets, buttons, hearts, a checkbox, and many more) on a blue background.' 
+          src="/assets/images/example-image2.svg"          
         />
       </image-compare>
-      <figcaption>
-        Notre Dame, before and after the fire. 
-        Photos from 
-        <a href="https://commons.wikimedia.org/wiki/File:Before_and_after_the_fire_Notre_Dame.jpg">
-          Wikimedia Commons
-        </a>
-      </figcaption>
     </figure>
 
     <nav class="table-of-contents" aria-labelledby="table-of-contents">
