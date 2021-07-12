@@ -49,6 +49,7 @@ template.innerHTML = /*html*/`
     }
 
     ::slotted(img) {
+      height: auto;
       width: 100%;
     }
 
@@ -62,6 +63,7 @@ template.innerHTML = /*html*/`
 
     slot {
       display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -101,7 +103,6 @@ template.innerHTML = /*html*/`
       width: calc(100% + var(--thumb-size));
       appearance: none;
       -webkit-appearance: none;
-      height: 100%;
       background: none;
       border: none;
     }
