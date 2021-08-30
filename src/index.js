@@ -166,11 +166,17 @@ class ImageCompare extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
+  animationFrame;
+
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     
-    this.shadowRoot.querySelector("input").addEventListener('input', ({target}) => {
-      this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
+    this.shadowRoot.querySelector("input").addEventListener('input', ({ target }) => {
+      if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+
+      requestAnimationFrame(() => {
+        this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
+      });
     });
 
     const customLabel = this.shadowRoot.host.getAttribute('label-text');
