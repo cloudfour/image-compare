@@ -174,7 +174,7 @@ class ImageCompare extends HTMLElement {
     this.shadowRoot.querySelector("input").addEventListener('input', ({ target }) => {
       if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
 
-      requestAnimationFrame(() => {
+      this.animationFrame = requestAnimationFrame(() => {
         this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
       });
     });
