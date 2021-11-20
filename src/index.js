@@ -171,13 +171,20 @@ class ImageCompare extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     
-    this.shadowRoot.querySelector("input").addEventListener('input', ({ target }) => {
-      if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+    ['input', 'change'].forEach((eventName) => {
+      this.shadowRoot.querySelector("input").addEventListener(
+        eventName,
+        ({ target }) => {
+          if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
 
-      this.animationFrame = requestAnimationFrame(() => {
-        this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
-      });
+          this.animationFrame = requestAnimationFrame(() => {
+            this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
+          });
+        },
+      );
     });
+    this.shadowRoot.querySelector("input").addEventListener('input', handleChange);
+    this.shadowRoot.querySelector("input").addEventListener('change', handleChange);
 
     const customLabel = this.shadowRoot.host.getAttribute('label-text');
     if(customLabel) {
