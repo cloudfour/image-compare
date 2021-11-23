@@ -183,8 +183,6 @@ class ImageCompare extends HTMLElement {
         },
       );
     });
-    this.shadowRoot.querySelector("input").addEventListener('input', handleChange);
-    this.shadowRoot.querySelector("input").addEventListener('change', handleChange);
 
     const customLabel = this.shadowRoot.host.getAttribute('label-text');
     if(customLabel) {
