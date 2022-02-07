@@ -12,11 +12,6 @@
           "type": "string"
         }
       ],
-      "properties": [
-        {
-          "name": "animationFrame"
-        }
-      ],
       "slots": [
         {
           "name": "image-1",
