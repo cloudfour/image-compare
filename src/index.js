@@ -23,7 +23,7 @@ const thumbSvgWidth = 4;
 
 // Since the code below is a template string literal, it will not be minified or
 // transpiled
-template.innerHTML = /*html*/`
+template.innerHTML = /*html*/ `
   <style>
     :host {
       --exposure: 50%;
@@ -141,19 +141,19 @@ template.innerHTML = /*html*/`
 
 /**
  * Our ImageCompare web component class
- * 
+ *
  * @attr {string} label-text - Provide additional context to screen reader users.
- * 
+ *
  * @slot image-1 - Your first image. Will appear on the "left"
  * @slot image-2 - Your second image. Will appear on the "right"
- * 
- * @cssprop --thumb-background-color - The background color of the range slider handle. 
+ *
+ * @cssprop --thumb-background-color - The background color of the range slider handle.
  * @cssprop --thumb-background-image - The background image of the range slider handle.
  * @cssprop --thumb-size - The size of the range slider handle.
  * @cssprop --thumb-radius - The border-radius of the range slider handle.
  * @cssprop --thumb-border-color - The color of the range slider handle border.
  * @cssprop --thumb-border-size - The width of the range slider handle border.
- * 
+ *
  * @ccprop --focus-width - The width of the range slider handle's focus outline.
  * @ccprop --focus-color - The color of the range slider handle's focus outline.
  *
@@ -166,26 +166,26 @@ class ImageCompare extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  animationFrame;
-
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    
-    ['input', 'change'].forEach((eventName) => {
-      this.shadowRoot.querySelector("input").addEventListener(
-        eventName,
-        ({ target }) => {
+
+    ["input", "change"].forEach((eventName) => {
+      this.shadowRoot
+        .querySelector("input")
+        .addEventListener(eventName, ({ target }) => {
           if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
 
           this.animationFrame = requestAnimationFrame(() => {
-            this.shadowRoot.host.style.setProperty('--exposure', `${target.value}%`)
+            this.shadowRoot.host.style.setProperty(
+              "--exposure",
+              `${target.value}%`
+            );
           });
-        },
-      );
+        });
     });
 
-    const customLabel = this.shadowRoot.host.getAttribute('label-text');
-    if(customLabel) {
+    const customLabel = this.shadowRoot.host.getAttribute("label-text");
+    if (customLabel) {
       this.shadowRoot.querySelector(".js-label-text").textContent = customLabel;
     }
   }
