@@ -8,12 +8,6 @@ Our ImageCompare web component class
 |--------------|----------|--------------------------------------------------|
 | `label-text` | `string` | Provide additional context to screen reader users. |
 
-## Properties
-
-| Property         |
-|------------------|
-| `animationFrame` |
-
 ## Slots
 
 | Name      | Description                                   |
