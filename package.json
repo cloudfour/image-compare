@@ -1,6 +1,6 @@
 {
   "name": "@cloudfour/image-compare",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A tiny, zero-dependency web component for comparing two images using a slider. Built with a focus on accessibility, performance, and progressive enhancement.",
   "license": "ISC",
   "type": "module",
