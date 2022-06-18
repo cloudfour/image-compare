@@ -26,7 +26,7 @@
     "prepare": "run-p build document"
   },
   "devDependencies": {
-    "browser-sync": "2.27.9",
+    "browser-sync": "2.27.10",
     "cpy-cli": "4.1.0",
     "del-cli": "4.0.1",
     "minify": "8.0.4",
