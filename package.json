@@ -31,7 +31,7 @@
     "del-cli": "5.1.0",
     "minify": "10.5.2",
     "npm-run-all2": "6.1.2",
-    "web-component-analyzer": "1.1.7",
+    "web-component-analyzer": "2.0.0",
     "chokidar-cli": "3.0.0"
   }
 }
