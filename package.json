@@ -30,7 +30,7 @@
     "cpy-cli": "5.0.0",
     "del-cli": "5.1.0",
     "minify": "11.3.0",
-    "npm-run-all2": "6.2.0",
+    "npm-run-all2": "6.2.1",
     "web-component-analyzer": "2.0.0",
     "chokidar-cli": "3.0.0"
   }
