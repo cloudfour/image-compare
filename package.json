@@ -28,7 +28,7 @@
   "devDependencies": {
     "browser-sync": "3.0.3",
     "cpy-cli": "5.0.0",
-    "del-cli": "5.1.0",
+    "del-cli": "6.0.0",
     "minify": "11.4.1",
     "npm-run-all2": "6.2.3",
     "web-component-analyzer": "2.0.0",
