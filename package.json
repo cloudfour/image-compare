@@ -29,7 +29,7 @@
     "browser-sync": "3.0.4",
     "cpy-cli": "5.0.0",
     "del-cli": "6.0.0",
-    "minify": "13.0.0",
+    "minify": "15.0.1",
     "npm-run-all2": "8.0.4",
     "web-component-analyzer": "2.0.0",
     "chokidar-cli": "3.0.0"
