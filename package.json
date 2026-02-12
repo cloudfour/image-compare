@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "browser-sync": "3.0.4",
-    "cpy-cli": "6.0.0",
+    "cpy-cli": "7.0.0",
     "del-cli": "7.0.0",
     "minify": "15.0.1",
     "npm-run-all2": "8.0.4",
