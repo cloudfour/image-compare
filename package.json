@@ -17,7 +17,7 @@
     "start:watch": "npx chokidar \"src/index.js\" -c \"npm run document\"",
     "build": "run-s build:*",
     "build:clean": "del dist",
-    "build:copy": "cpy src/*.js dist",
+    "build:copy": "cpy \"src/*.js\" dist/",
     "build:minify": "minify dist/index.js > dist/index.min.js",
     "document": "run-p document:*",
     "document:json": "wca analyze src/index.js --outFile manifests/manifest.json",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "browser-sync": "3.0.4",
-    "cpy-cli": "6.0.0",
+    "cpy-cli": "7.0.0",
     "del-cli": "7.0.0",
     "minify": "15.0.1",
     "npm-run-all2": "9.0.3",
