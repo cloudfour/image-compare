@@ -105,3 +105,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Vitest browser mode artifacts (screenshots and traces from failing runs)
+.vitest-attachments/
+__screenshots__/
