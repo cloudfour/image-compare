@@ -154,11 +154,11 @@ template.innerHTML = /*html*/`
  * @cssprop --thumb-border-color - The color of the range slider handle border.
  * @cssprop --thumb-border-size - The width of the range slider handle border.
  * 
- * @ccprop --focus-width - The width of the range slider handle's focus outline.
- * @ccprop --focus-color - The color of the range slider handle's focus outline.
+ * @cssprop --focus-width - The width of the range slider handle's focus outline.
+ * @cssprop --focus-color - The color of the range slider handle's focus outline.
  *
- * @ccprop --divider-width - The width of the divider shown between the two images.
- * @ccprop --divider-color - The color of the divider shown between the two images.
+ * @cssprop --divider-width - The width of the divider shown between the two images.
+ * @cssprop --divider-color - The color of the divider shown between the two images.
  */
 class ImageCompare extends HTMLElement {
   constructor() {

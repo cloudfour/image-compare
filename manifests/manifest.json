@@ -46,6 +46,22 @@
         {
           "name": "--thumb-border-size",
           "description": "The width of the range slider handle border."
+        },
+        {
+          "name": "--focus-width",
+          "description": "The width of the range slider handle's focus outline."
+        },
+        {
+          "name": "--focus-color",
+          "description": "The color of the range slider handle's focus outline."
+        },
+        {
+          "name": "--divider-width",
+          "description": "The width of the divider shown between the two images."
+        },
+        {
+          "name": "--divider-color",
+          "description": "The color of the divider shown between the two images."
         }
       ]
     }

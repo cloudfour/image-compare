@@ -19,6 +19,10 @@ Our ImageCompare web component class
 
 | Property                   | Description                                      |
 |----------------------------|--------------------------------------------------|
+| `--divider-color`          | The color of the divider shown between the two images. |
+| `--divider-width`          | The width of the divider shown between the two images. |
+| `--focus-color`            | The color of the range slider handle's focus outline. |
+| `--focus-width`            | The width of the range slider handle's focus outline. |
 | `--thumb-background-color` | The background color of the range slider handle. |
 | `--thumb-background-image` | The background image of the range slider handle. |
 | `--thumb-border-color`     | The color of the range slider handle border.     |
