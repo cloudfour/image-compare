@@ -6,7 +6,6 @@
   "type": "module",
   "homepage": "https://image-compare-component.netlify.app/",
   "main": "dist/index.js",
-  "prepare": "npm run prepare",
   "files": [
     "dist",
     "manifests"
