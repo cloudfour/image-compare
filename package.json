@@ -23,15 +23,21 @@
     "document:json": "wca analyze src/index.js --outFile manifests/manifest.json",
     "document:vscode": "wca analyze src/index.js --format vscode --outFile manifests/manifest-vscode.json",
     "document:md": "wca analyze src/index.js --outFile manifests/manifest.md",
-    "prepare": "run-p build document"
+    "prepare": "run-p build document",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
+    "@vitest/browser-playwright": "4.1.11",
     "browser-sync": "3.0.4",
+    "chokidar-cli": "3.0.0",
     "cpy-cli": "7.0.0",
     "del-cli": "7.0.0",
     "minify": "15.3.1",
     "npm-run-all2": "9.0.3",
-    "web-component-analyzer": "2.0.0",
-    "chokidar-cli": "3.0.0"
+    "playwright": "1.62.1",
+    "vitest": "4.1.11",
+    "web-component-analyzer": "2.0.0"
   }
 }
