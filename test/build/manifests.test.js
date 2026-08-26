@@ -44,12 +44,23 @@ describe("npm run document", () => {
   // they can theme it. If the analyzer stops picking those tags up, the promise
   // silently disappears from the editor autocomplete that reads this manifest.
   it("documents every CSS custom property tagged in the source", () => {
-    const tagged = [...source.matchAll(/@cssprop\s+(--[\w-]+)/g)].map(
+    const tagged = [...source.matchAll(/@cssprop(?:erty)?\s+(--[\w-]+)/gi)].map(
       ([, name]) => name,
     );
     const documented = tag.cssProperties.map(({ name }) => name);
 
     expect(tagged.filter((name) => !documented.includes(name))).toEqual([]);
+  });
+
+  // The test above can only check tags the analyzer would recognize, so a
+  // misspelled one is invisible to it — the property just quietly vanishes from
+  // the docs. `@cssprop` and `@cssproperty` are the two spellings that work.
+  it("spells every CSS property tag the way the analyzer expects", () => {
+    const misspelled = [...source.matchAll(/@(\w*prop\w*)/g)]
+      .map(([, name]) => name)
+      .filter((name) => !["cssprop", "cssproperty"].includes(name.toLowerCase()));
+
+    expect([...new Set(misspelled)]).toEqual([]);
   });
 
   it("gives every documented item a description", () => {
