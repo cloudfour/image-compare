@@ -32,7 +32,7 @@
     "browser-sync": "3.0.4",
     "chokidar-cli": "3.0.0",
     "cpy-cli": "7.0.0",
-    "del-cli": "7.0.0",
+    "del-cli": "8.0.1",
     "minify": "15.3.1",
     "npm-run-all2": "9.0.3",
     "playwright": "1.64.0",
