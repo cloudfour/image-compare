@@ -9,11 +9,9 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    # The Ubuntu package mirror that `playwright install --with-deps` downloads
-    # from occasionally stalls. Without a cap, a stalled job runs until GitHub's
-    # six-hour default timeout. The cap is set well above a normal run so that a
-    # slow-but-working mirror (around 10 minutes) still passes.
-    timeout-minutes: 15
+    # The job normally finishes in about a minute. Without a cap, a hung job,
+    # such as a stalled download, runs until GitHub's six-hour default timeout.
+    timeout-minutes: 10
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v7.0.1
@@ -24,8 +22,11 @@ jobs:
           cache: "npm"
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
+      # No `--with-deps`: the ubuntu-latest image ships Google Chrome, so
+      # Chromium's system libraries are already installed. The flag only adds
+      # fonts from Ubuntu's package mirror, which sometimes stalls for minutes.
       - name: Install test browser 🌐
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium
       - name: Run build 🔨
         run: npm run build
       - name: Run document 📖
