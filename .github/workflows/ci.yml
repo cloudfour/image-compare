@@ -9,6 +9,11 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    # The Ubuntu package mirror that `playwright install --with-deps` downloads
+    # from occasionally stalls. Without a cap, a stalled job runs until GitHub's
+    # six-hour default timeout. The cap is set well above a normal run so that a
+    # slow-but-working mirror (around 10 minutes) still passes.
+    timeout-minutes: 15
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v7.0.1
