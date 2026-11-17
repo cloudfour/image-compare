@@ -35,7 +35,7 @@
     "del-cli": "8.0.1",
     "minify": "15.3.1",
     "npm-run-all2": "9.0.4",
-    "playwright": "1.65.0",
+    "playwright": "1.65.1",
     "vitest": "5.1.0",
     "web-component-analyzer": "2.0.0"
   }
